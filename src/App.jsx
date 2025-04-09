@@ -1,13 +1,31 @@
 
+import { Route, Routes } from 'react-router'
 import './App.css'
+import UserLayout from './Layouts/UserLayout'
+import Home from './Pages/Home'
+import About from './Pages/About'
 
 function App() {
 
 
   return (
-    <>
-      <h1 className='text-5xl'>Hello</h1>
-    </>
+    <div className="max-w-7xl mx-auto">
+      <Routes>
+
+
+        <Route element={<UserLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Route>
+
+        {/* <Route path="concerts">
+          <Route index element={<ConcertsHome />} />
+          <Route path=":city" element={<City />} />
+          <Route path="trending" element={<Trending />} />
+        </Route> */}
+      </Routes>
+
+    </div>
   )
 }
 
