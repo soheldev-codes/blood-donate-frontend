@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaTint } from "react-icons/fa";
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 const NavMenu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -18,15 +18,17 @@ const NavMenu = () => {
                         <NavLink to="/" className="text-black hover:text-red-600">Home</NavLink>
                         <NavLink to="/about" className="hover:text-red-600">About Us</NavLink>
                         <NavLink to="/find-blood" className="hover:text-red-600">Find Blood</NavLink>
-                        <NavLink to="/register" className="hover:text-red-600">Register Now</NavLink>
+                        <NavLink to="/auth/signup" className="hover:text-red-600">Register Now</NavLink>
                     </nav>
                 </div>
 
                 {/* Right: Login + Hamburger */}
                 <div className="flex items-center space-x-4">
-                    <button className="btn border border-gray-300 rounded-xl hover:bg-gray-100 hidden md:inline-block">
-                        Log In
-                    </button>
+                    <Link to='/admin/signin'>
+                        <button className="btn border border-gray-300 rounded-xl hover:bg-gray-100 hidden md:inline-block">
+                            Admin
+                        </button>
+                    </Link>
                     {/* Mobile Hamburger Icon */}
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -43,10 +45,10 @@ const NavMenu = () => {
                     <NavLink to="/" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Home</NavLink>
                     <NavLink to="/about" onClick={() => setMenuOpen(false)} className="hover:text-red-600">About Us</NavLink>
                     <NavLink to="/find-blood" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Find Blood</NavLink>
-                    <NavLink to="/register" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Register Now</NavLink>
-                    <button className="btn border border-gray-300 rounded-xl hover:bg-gray-100 w-full">
-                        Log In
-                    </button>
+                    <NavLink to="/auth/signup" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Register Now</NavLink>
+                    <Link to='/admin/signin'><button className="btn border border-gray-300 rounded-xl hover:bg-gray-100 w-full">
+                        Admin
+                    </button></Link>
                 </div>
             )}
         </div>

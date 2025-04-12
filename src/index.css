@@ -1,6 +1,11 @@
 @import "tailwindcss";
+/* @plugin "daisyui"; */
 
 a.active {
     text-decoration: underline;
     text-underline-offset: 4px;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
 }

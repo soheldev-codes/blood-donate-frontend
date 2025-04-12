@@ -4,6 +4,9 @@ import './App.css'
 import UserLayout from './Layouts/UserLayout'
 import Home from './Pages/Home'
 import About from './Pages/About'
+import AuthLayout from './Layouts/AuthLayout'
+import SignIn from './Pages/SignIn'
+import SignUp from './Pages/SignUp'
 
 function App() {
 
@@ -18,11 +21,11 @@ function App() {
           <Route path="about" element={<About />} />
         </Route>
 
-        {/* <Route path="concerts">
-          <Route index element={<ConcertsHome />} />
-          <Route path=":city" element={<City />} />
-          <Route path="trending" element={<Trending />} />
-        </Route> */}
+        <Route path="auth" element={<AuthLayout />} >
+
+          <Route index path="signup" element={<SignUp />} />
+          <Route path="signin" element={<SignIn />} />
+        </Route>
       </Routes>
 
     </div>
